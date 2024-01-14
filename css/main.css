@@ -1,0 +1,164 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  align-content: start;
+  background-color: black;
+  margin-top: 0.5em;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+.loan-calculator_container {
+  display: grid;
+  background-color: rgb(40, 34, 70);
+  color: #ffffff91;
+  border-radius: 10px;
+  width: 95%;
+  max-width: 700px;
+  height: 95vh;
+  box-shadow: 0 0 10px 1px #fff;
+
+  h1 {
+    text-align: center;
+  }
+
+  .input_container {
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    max-width: 500px;
+    height: fit-content;
+    box-shadow: 0 0 10px 1px #fff;
+    border-radius: 10px;
+    padding: 2em;
+
+    label {
+      font-weight: 700;
+      font-size: 0.8em;
+    }
+    input {
+      padding-left: 0.3em;
+      margin-bottom: 0.5em;
+    }
+    button {
+      font-weight: bold;
+    }
+  }
+
+  .schedule_container {
+    max-width: 700px;
+    overflow: hidden;
+
+    .total-payments {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-items: center;
+      margin: 0.5em auto;
+
+      div {
+        transition: 300ms;
+
+        &:hover {
+          color: #fff;
+          transform: scale(1.1);
+        }
+
+        p {
+          font-weight: 900;
+        }
+      }
+    }
+
+    .list-categories {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: start;
+      gap: 3em;
+      font-weight: bold;
+      border-top: 1px solid;
+
+      span:nth-child(1):hover ~ .month_span {
+        color: #fff;
+      }
+
+      span {
+        transition: 300ms;
+        margin: auto;
+      }
+    }
+
+    .month-list_container {
+      border-top: 2px solid;
+      display: grid;
+      max-height: 80%;
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
+      /* Hide scrollbar for Chrome, Safari and Edge */
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .year_div {
+        height: var(--year_div-height);
+        scroll-snap-align: start;
+        font-size: small;
+        font-weight: 900;
+        border-top: 3px solid;
+        background-color: rgba(128, 128, 128, 0.251);
+
+        span {
+          padding: 1em;
+        }
+      }
+
+      .month_div {
+        height: var(--month_div-height);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+
+        &:nth-of-type(odd) {
+          background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        &:last-of-type {
+          margin-bottom: 5em;
+        }
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.15);
+        }
+      }
+    }
+  }
+  .show {
+    animation: show 500ms;
+  }
+}
+
+@keyframes show {
+  0% {
+    height: 0;
+    opacity: 0;
+    transform: translateY(-4rem);
+    filter: blur();
+  }
+  100% {
+    height: inherit;
+    transform: scale(1);
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
