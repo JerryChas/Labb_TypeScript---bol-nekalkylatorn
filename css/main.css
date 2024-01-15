@@ -94,17 +94,27 @@ body {
       }
     }
 
+    /* Ändrar färg på kusin element */
     &:has(.month-category:hover) {
+      .month-category {
+        color: #fff;
+      }
       .month_span {
         color: #fff;
       }
     }
     &:has(.interest-category:hover) {
+      .interest-category {
+        color: #fff;
+      }
       .interest_span {
         color: #fff;
       }
     }
     &:has(.dept-category:hover) {
+      .dept-category {
+        color: #fff;
+      }
       .dept_span {
         color: #fff;
       }
@@ -139,6 +149,7 @@ body {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         justify-items: center;
+        transition: 300ms;
 
         &:nth-of-type(odd) {
           background-color: rgba(0, 0, 0, 0.05);
