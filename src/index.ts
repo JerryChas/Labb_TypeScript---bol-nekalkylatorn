@@ -148,9 +148,9 @@ function renderSchedule() {
   scheduleContainer.appendChild(listCategories);
 
   listCategories.innerHTML = `
-    <span>Month</span>
-    <span>Interest</span>
-    <span>Dept</span>
+    <span class="month-category">Month</span>
+    <span class="interest-category">Interest</span>
+    <span class="dept-category">Dept</span>
   `;
 
   // skapar en element för månadslistan

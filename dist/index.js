@@ -84,9 +84,9 @@ function renderSchedule() {
     listCategories.classList.add('list-categories');
     scheduleContainer.appendChild(listCategories);
     listCategories.innerHTML = `
-    <span>Month</span>
-    <span>Interest</span>
-    <span>Dept</span>
+    <span class="month-category">Month</span>
+    <span class="interest-category">Interest</span>
+    <span class="dept-category">Dept</span>
   `;
     const monthListContainer = document.createElement('div');
     monthListContainer.classList.add('month-list_container');

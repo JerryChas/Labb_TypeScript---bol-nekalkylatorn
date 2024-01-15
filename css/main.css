@@ -88,13 +88,25 @@ body {
       font-weight: bold;
       border-top: 1px solid;
 
-      span:nth-child(1):hover ~ .month_span {
-        color: #fff;
-      }
-
       span {
         transition: 300ms;
         margin: auto;
+      }
+    }
+
+    &:has(.month-category:hover) {
+      .month_span {
+        color: #fff;
+      }
+    }
+    &:has(.interest-category:hover) {
+      .interest_span {
+        color: #fff;
+      }
+    }
+    &:has(.dept-category:hover) {
+      .dept_span {
+        color: #fff;
       }
     }
 
